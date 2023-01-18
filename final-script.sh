@@ -24,13 +24,5 @@ do
 	do
 		source ./restore-object.sh $OAUTH_TOKEN $COS_ENDPOINT $bucket $object \
 		&>>response.txt
-		# REQUEST_BODY="<RestoreRequest><Days>1</Days><GlacierJobParameters><Tier>Accelerated</Tier></GlacierJobParameters></RestoreRequest>"
-		# MD5_HASH=$source ./hashmd5.sh ${REQUEST_BODY}
-		# curl -X "POST" "https://${COS_ENDPOINT}/${bucket}/${object}?restore" \
-   		#  	-H "Authorization: bearer ${OAUTH_TOKEN}" \
-   		#  	-H "Content-Type: text/plain" \
-    	# 	-H "Content-MD5: ${MD5_HASH}" \
-    	# 	-d "${REQUEST_BODY}" \
-    	# 	&>> response.txt
 	done
 done
