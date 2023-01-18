@@ -2,7 +2,4 @@
 *.xml
 *.conf
 *.json
-list-buckets.sh
-list-objects.sh
-script-test.sh
 files/
