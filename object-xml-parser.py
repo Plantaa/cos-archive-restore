@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import sys
 
-data = ["2023", "01", "12"]
+date = ["2023", "01", "12"]
 
 tree = ET.parse(sys.argv[1])
 root = tree.getroot()
@@ -20,7 +20,7 @@ for elem in root.iter("{http://s3.amazonaws.com/doc/2006-03-01/}Contents"):
         elif content.tag == "{http://s3.amazonaws.com/doc/2006-03-01/}LastModified":
             object_lmd = content.text[:10].split("-")
             for i in range(len(object_lmd)):
-                if data[i] > object_lmd[i]:
+                if date[i] > object_lmd[i]:
                     object_key = ""
                     object_lmd = ""
                     break
@@ -29,8 +29,8 @@ for elem in root.iter("{http://s3.amazonaws.com/doc/2006-03-01/}Contents"):
     if object_key != "" and object_lmd != "" and object_scl != "":
         objects_to_restore.append(object_key)
 
-file_name = bucket_name+"-objects.txt"
-with open(file_name, "w") as f:
+file_path = bucket_name+"-objects.txt"
+with open(file_path, "w") as f:
     for object in objects_to_restore:
         f.write(object+" ")
     f.close

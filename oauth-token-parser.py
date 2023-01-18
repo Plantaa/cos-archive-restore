@@ -1,7 +1,8 @@
 import json
+import sys
 
 def main():
-    with open("oauth-token.json", "r") as f:
+    with open(sys.argv[1], "r") as f:
         data = json.load(f)
         f.close()
     with open("oauth-token.txt", "w") as f:
