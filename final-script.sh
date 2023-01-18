@@ -17,7 +17,7 @@ do
 	> $bucket-objects.xml
 
 	#Parse desired objects and save to txt
-	python object-xml-parser.py $bucket-objects.xml
+	python object-xml-parser.py $bucket-objects.xml $DATE
 	
 	#Restore all objects in the bucket
 	for object in $(cat $bucket-objects.txt)

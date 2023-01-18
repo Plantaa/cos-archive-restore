@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import sys
 
-date = ["2023", "01", "12"]
+date = sys.argv[2]
 
 tree = ET.parse(sys.argv[1])
 root = tree.getroot()
@@ -18,12 +18,9 @@ for elem in root.iter("{http://s3.amazonaws.com/doc/2006-03-01/}Contents"):
         if content.tag == "{http://s3.amazonaws.com/doc/2006-03-01/}Key":
             object_key = content.text
         elif content.tag == "{http://s3.amazonaws.com/doc/2006-03-01/}LastModified":
-            object_lmd = content.text[:10].split("-")
-            for i in range(len(object_lmd)):
-                if date[i] > object_lmd[i]:
-                    object_key = ""
-                    object_lmd = ""
-                    break
+            object_lmd = content.text.split("T")[0]
+            if object_lmd < date:
+                object_lmd = ""
         elif content.tag == "{http://s3.amazonaws.com/doc/2006-03-01/}StorageClass" and content.text in ["GLACIER", "ACCELERATED"]:
             object_scl = content.text
     if object_key != "" and object_lmd != "" and object_scl != "":
