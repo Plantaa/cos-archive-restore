@@ -4,8 +4,8 @@ OAUTH_TOKEN=$1
 COS_ENDPOINT=$2
 BUCKET=$3
 OBJECT=$4
-DAYS=1
-TIER="Accelerated"
+DAYS=$5
+TIER=$6
 
 REQUEST_BODY="<RestoreRequest><Days>$DAYS</Days><GlacierJobParameters><Tier>$TIER</Tier></GlacierJobParameters></RestoreRequest>"
 MD5_HASH=$source ./hashmd5.sh ${REQUEST_BODY}

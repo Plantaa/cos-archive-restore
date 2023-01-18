@@ -22,7 +22,8 @@ do
 	#Restore all objects in the bucket
 	for object in $(cat $bucket-objects.txt)
 	do
-		source ./restore-object.sh $OAUTH_TOKEN $COS_ENDPOINT $bucket $object \
-		&>>response.txt
+		source ./restore-object.sh $OAUTH_TOKEN $COS_ENDPOINT \
+		$bucket $object $DATE $DAYS $TIER \
+		&>> response.txt
 	done
 done
