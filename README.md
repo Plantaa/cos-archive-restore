@@ -18,10 +18,10 @@
 - #### Lastly, it restores those objects
 ## How to use:
 - #### Provide, in the same directory, a script.conf file like this:
-APIKEY=\"w0w-mUch-$ecR&t\"
-CRN=\"some-numbers-and-letters\"
-COS_ENDPOINT=\"s3.us-south.cloud-object-storage.appdomain.cloud\"
-DATE=\"YYYY-MM-DD\"
-DAYS=\"\<integer\>\"
-TIER=(\"Bulk\"|\"Accelerated\")
+APIKEY=\"w0w-mUch-$ecR&t\"<br/>
+CRN=\"some-numbers-and-letters\"<br/>
+COS_ENDPOINT=\"s3.us-south.cloud-object-storage.appdomain.cloud\"<br/>
+DATE=\"YYYY-MM-DD\"<br/>
+DAYS=\"\<integer\>\"<br/>
+TIER=(\"Bulk\"|\"Accelerated\")<br/>
 - #### Run final-script.sh
