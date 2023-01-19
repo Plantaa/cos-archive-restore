@@ -23,7 +23,7 @@ do
 	for object in $(cat $bucket-objects.txt)
 	do
 		source ./restore-object.sh $OAUTH_TOKEN $COS_ENDPOINT \
-		$bucket $object $DATE $DAYS $TIER \
+		$bucket $object $DAYS $TIER \
 		&>> response.txt
 	done
 done
