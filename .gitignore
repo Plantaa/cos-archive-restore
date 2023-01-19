@@ -1,5 +1,5 @@
-*.txt
-*.xml
-*.conf
-*.json
+*.txt*
+*.xml*
+*.conf*
+*.json*
 files/
