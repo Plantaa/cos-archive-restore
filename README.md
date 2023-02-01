@@ -17,11 +17,6 @@
 - #### Parses the .xml lists, and retrieves the name of archived objects that were last modified after the date specified in script.conf
 - #### Lastly, it restores those objects
 ## How to use:
-- #### Provide, in the same directory, a script.conf file like this:
-APIKEY=\"w0w-mUch-$ecR&t\"<br/>
-CRN=\"some-numbers-and-letters\"<br/>
-COS_ENDPOINT=\"s3.us-south.cloud-object-storage.appdomain.cloud\"<br/>
-DATE=\"YYYY-MM-DD\"<br/>
-DAYS=\"\<integer\>\"<br/>
-TIER=(\"Bulk\"|\"Accelerated\")<br/>
+- #### Rename the \"script-example.conf\" file to \"script.conf\"
+- #### Change the example values of the configuration variables to the values you need
 - #### Run final-script.sh
