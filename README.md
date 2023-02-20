@@ -1,7 +1,7 @@
 # IBM Cloud Object Storage Archive Restore
 
 ### This is a collection of bash and python scripts that work together to automate the restoration of all archived objects in an IBM Object Storage instance, depending on it\'s last modified date. The script named "final-script.sh" is the main script, and it should be run with no arguments.
-### The script has a limitation. It can only restore objects in the same region as the endpoint you provide. As a workarround, you can run the script multiple times with diferent endpoints.
+### The script has two limitations. It can only restore objects in the same region as the endpoint you provide. As a workarround, you can run the script multiple times with diferent endpoints. It also cannot restore more than 1000 objects.
 ## What \"final-script.sh\"  does:
 - #### Reads a \"script.conf\" file (provided by you) to get the following values:
   - APIKEY: Your IBM Cloud API Key
